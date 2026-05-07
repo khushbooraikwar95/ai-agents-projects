@@ -52,9 +52,11 @@ Install via UV:
 
 Bash
 uv sync
+
+
 📬 Let's Connect!
 I’m always open to discussing AI Agents, LLM Ops, or potential collaborations.
 
-GitHub: @khushbooraikwar95
+Linkedin: https://www.linkedin.com/in/khushboo-raikwar-25a83291/
 
 Course Reference: Inspired by the Master AI Agentic Engineering curriculum.
