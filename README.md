@@ -1,69 +1,60 @@
-## Master AI Agentic Engineering -  build autonomous AI Agents
+The repository is organized by weekly milestones, each focusing on a specific paradigm of AI engineering:
 
-### 6 week journey to code and deploy AI Agents with OpenAI Agents SDK, CrewAI, LangGraph, AutoGen and MCP
+1_foundations: Core concepts of Agentic AI and setting up the development environment.
 
-![Autonomous Agent](assets/autonomy.png)
+2_openai: Implementing structured outputs and custom agents using the OpenAI SDK.
 
-_If you're looking at this in Cursor, please right click on the filename in the Explorer on the left, and select "Open preview", to view the formatted version._
+3_crew: Multi-agent orchestration using CrewAI for role-playing and collaborative tasks.
 
-I couldn't be more excited to welcome you! This is the start of your 6 week adventure into the powerful, astonishing and often surreal world of Agentic AI.
+4_langgraph: Building cyclic, stateful agent workflows with LangGraph.
 
-### Before you begin
+5_autogen: Exploring Microsoft’s AutoGen for conversational agent patterns.
 
-I'm here to help you be most successful! Please do reach out if I can help, either in the platform or by emailing me direct (ed@edwarddonner.com). It's always great to connect with people on LinkedIn to build up the community - you'll find me here:  
-https://www.linkedin.com/in/eddonner/  
-And this is new to me, but I'm also trying out X/Twitter at [@edwarddonner](https://x.com/edwarddonner) - if you're on X, please show me how it's done 😂  
+6_mcp: Implementing the Model Context Protocol (MCP) to connect agents to external data sources.
 
-### The not-so-dreaded setup instructions
+🛠 Tech Stack
+Language: Python 3.12
 
-Perhaps famous last words: but I really, truly hope that I've put together an environment that will be not too horrific to set up!
+Orchestration: CrewAI, LangGraph, AutoGen
 
-- Windows people, your instructions are [here](setup/SETUP-PC.md)
-- Mac people, yours are [here](setup/SETUP-mac.md)
-- Linux people, yours are [here](setup/SETUP-linux.md)
+Models: OpenAI (GPT-4o), Google Gemini, DeepSeek
 
-Any problems, please do contact me.
+Package Management: UV (for lightning-fast dependency handling)
 
-### Important notes for CrewAI week (Week 3)
+IDE: Cursor
 
-Windows PC users: you will need to have checked the "gotcha #4" at the top of the [SETUP-PC](setup/SETUP-PC.md) instructions -- installing Microsoft Build Tools.  
-If you don't do this, then CrewAI will fail with an obscure error involving Chroma..
+🧠 Key Learnings & Skill Gains
+Through this project, I have mastered several critical aspects of AI engineering:
 
+Agentic Design Patterns: Learned when to use a simple "Tool-use" agent versus a complex "Multi-agent" hierarchy.
 
-Then, you will need to run this command in a Cursor Terminal in the project root directory in order to run the Crew commands:  
-`uv tool install crewai==0.130.0 --python 3.12`   
-And in case you've used Crew before, it might be worth doing this to make sure you have the latest:  
-`uv tool upgrade crewai==0.130.0 --python 3.12`  
+State & Memory Management: Implemented persistence in agents, allowing them to "remember" context across multiple interactions.
 
-This command pins Crew to the same version that I use on the course. If you have any problems with Crew, you could try using the latest version instead, by running this command:  
-`uv tool upgrade crewai --python 3.12`  
+Human-in-the-loop (HITL): Developed workflows in LangGraph that pause for human approval before executing sensitive actions.
 
-At any point, you can see which version of Crew you have installed with this:  
-`uv tool list`
+Error Handling & Robustness: Handled API rate limits, hallucination checks, and "self-healing" loops where agents correct their own code.
 
-Sidenote: a "tool" with uv is a utility that is installed globally by uv. After installing this tool, you can use "crewai" as a command, and it runs the code associated with this tool.
+Environment Optimization: Used uv and pyproject.toml to maintain a clean, reproducible production-ready environment.
 
-Then please keep in mind for Crew:
+🚀 How to Run
+Clone the Repository:
 
-1. There are two ways that you can work on the CrewAI project in week 3. Either review the code for each project while I build it, and then do `crewai run` to see it in action. Or if you prefer to be more hands-on, then create your own Crew project from scratch to mirror mine; for example, create `my_debate` to go alongside `debate`, and write the code alongside me. Either approach works!  
-2. Windows users: there's a new issue that was recently introduced by one of Crew's libraries. Until this is fixed, you might get a "unicode" error when you try to run `crewai create crew`.  If that happens, please try running this command in the Terminal first: `$env:PYTHONUTF8 = "1"`  
-3. Gemini users: in addition to a key in your `.env` file for `GOOGLE_API_KEY`, you will need an identical key for `GEMINI_API_KEY`
+Bash
+git clone https://github.com/khushbooraikwar95/ai-agents-projects.git
+cd ai-agents-projects
+Environment Setup:
+Create a .env file and add your credentials:
 
-### Super useful resources
+Code snippet
+OPENAI_API_KEY=your_key
+GOOGLE_API_KEY=your_key
+Install via UV:
 
-- The course [resources](https://edwarddonner.com/2025/04/21/the-complete-agentic-ai-engineering-course/) with videos
-- Many essential guides in the [guides](guides/01_intro.ipynb) section
-- The [troubleshooting](setup/troubleshooting.ipynb) notebook  
-- My overall [FAQ](https://edwarddonner.com/faq) page with common issues and questions
+Bash
+uv sync
+📬 Let's Connect!
+I’m always open to discussing AI Agents, LLM Ops, or potential collaborations.
 
-### API costs - please read me!
+GitHub: @khushbooraikwar95
 
-This course does involve making calls to OpenAI and other frontier models, requiring an API key and a small spend, which we set up in the SETUP instructions. If you'd prefer not to spend on API calls, there are cheaper alternatives like DeepSeek and free alternatives like using Ollama!
-
-Details are [here](guides/09_ai_apis_and_ollama.ipynb).
-
-Be sure to monitor your API costs to ensure you are totally happy with any spend. For OpenAI, the dashboard is [here](https://platform.openai.com/usage).
-
-### ABOVE ALL ELSE -
-
-Be sure to have fun with the course! You could not have picked a better time to be learning about Agentic AI. I hope you enjoy every single minute! And if you get stuck at any point - [contact me](https://www.linkedin.com/in/eddonner/).
+Course Reference: Inspired by the Master AI Agentic Engineering curriculum.
